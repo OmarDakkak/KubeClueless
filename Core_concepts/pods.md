@@ -1,19 +1,19 @@
 # TO KNOW HOW MANY PODS EXISTS IN THE CURRENT NAMESPACE
-kubectl get pods
+`kubectl get pods`
 
 # TO CREATE A NEW POD WITH THE NGINX IMAGE
-kubectl run nginx-pod --image=nginx
+`kubectl run nginx-pod --image=nginx`
 
 # TO CREATE A MANIFEST FILE USING kubectl run WITH --dry-run=client -o yaml OPTION
-kubectl run pod-name --image=image --dry-run=client -o yaml > pod.yaml
+`kubectl run pod-name --image=image --dry-run=client -o yaml > pod.yaml`
 
 # TO CREATE A RESOURCE FROM THE MANIFEST FILE
-kubectl create -f pod.yaml
+`kubectl create -f pod.yaml`
 
 # TO KNOW THE IMAGE USED TO CREATE A POD & # TO KNOW HOW MANY CONTAINERS ARE PART OF A POD
-kubectl describe pod pod-name
+`kubectl describe pod pod-name`
 
-The command: kubectl describe pod pod-name provides detailed information about a specific pod in Kubernetes. 
+The command: kubectl describe pod `pod-name` provides detailed information about a specific pod in Kubernetes. 
 This information includes:
 
 - Recent events: Any recent events that have occurred related to the pod.
@@ -30,7 +30,7 @@ This information includes:
 => If the state is `Waiting` and the reason is `ImagePullBackOff`, it indicates that Kubernetes is unable to pull the container image. Check the "Reason" and "Message" fields for more details. Common causes include incorrect image name, lack of permissions, or network issues.
 
 # TO KNOW WHICH NODES A POD WAS PLACED ON 
-kubectl get pods -o wide
+`kubectl get pods -o wide`
 
 This command will display a list of pods along with additional information, including the nodes they are running on.
 
@@ -41,7 +41,7 @@ The `READY` column shows the ratio of containers that are ready to serve request
 For example, if a pod has 2 containers and both are ready, the `READY` column will show `2/2`. If only one container is ready, it will show `1/2`.
 
 # TO DELETE A POD
-kubectl delete pod pod-name
+`kubectl delete pod pod-name`
 
 This command will delete the specified pod from the Kubernetes cluster.
 
