@@ -10,7 +10,7 @@
 # TO CREATE A RESOURCE FROM THE MANIFEST FILE
 `kubectl create -f pod.yaml`
 
-# TO KNOW THE IMAGE USED TO CREATE A POD & # TO KNOW HOW MANY CONTAINERS ARE PART OF A POD
+# TO KNOW THE IMAGE USED TO CREATE A POD & TO KNOW HOW MANY CONTAINERS ARE PART OF A POD
 `kubectl describe pod pod-name`
 
 The command: kubectl describe pod `pod-name` provides detailed information about a specific pod in Kubernetes. 
@@ -23,10 +23,10 @@ This information includes:
 - IP addresses: The IP addresses assigned to the pod.
 - Annotations and labels: Any annotations and labels that have been applied to the pod.
 
-=> To know the image Under Containers you have just to look in Image to know which Image is used to create the POD
-=> To know how many containers are part of a pod look in the output, look for the "Containers" section and count the number of containers listed. Each container will have its own subsection under "Containers".
-=> To know the state of a container in a pod, look for the "State" section under each container. The state can be "Waiting", "Running", or "Terminated".
-=> To know what causes a container in a pod to be in error or waiting, look for the "Reason" and "Message" fields under the "State" section. These fields will provide details about the cause.
+=> To know the image Under Containers you have just to look in Image to know which Image is used to create the POD<br>
+=> To know how many containers are part of a pod look in the output, look for the "Containers" section and count the number of containers listed. Each container will have its own subsection under "Containers".<br>
+=> To know the state of a container in a pod, look for the "State" section under each container. The state can be "Waiting", "Running", or "Terminated".<br>
+=> To know what causes a container in a pod to be in error or waiting, look for the "Reason" and "Message" fields under the "State" section. These fields will provide details about the cause.<br>
 => If the state is `Waiting` and the reason is `ImagePullBackOff`, it indicates that Kubernetes is unable to pull the container image. Check the "Reason" and "Message" fields for more details. Common causes include incorrect image name, lack of permissions, or network issues.
 
 # TO KNOW WHICH NODES A POD WAS PLACED ON 
