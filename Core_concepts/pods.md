@@ -45,3 +45,8 @@ For example, if a pod has 2 containers and both are ready, the `READY` column wi
 
 This command will delete the specified pod from the Kubernetes cluster.
 
+# EDIT A POD
+`kubectl edit pod pod-name`
+
+# UPDATE THE POD
+`kubectl apply -f pod-name.yaml`
