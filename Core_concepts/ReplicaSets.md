@@ -5,7 +5,7 @@ kubectl get replicaset
 ```
 or 
 ``` bash
-kubectl get rs`
+kubectl get rs
 ```
 
 # Definition of the ReplicaSet
