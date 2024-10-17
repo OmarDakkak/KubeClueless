@@ -1,52 +1,71 @@
-# TO KNOW HOW MANY PODS EXISTS IN THE CURRENT NAMESPACE
-`kubectl get pods`
+## To know how many pods exist in the current namespace
+```bash
+kubectl get pods
+```
 
-# TO CREATE A NEW POD WITH THE NGINX IMAGE
-`kubectl run nginx-pod --image=nginx`
+## To create a new pod with the nginx image
+```bash
+kubectl run nginx-pod --image=nginx
+```
 
-# TO CREATE A MANIFEST FILE USING kubectl run WITH --dry-run=client -o yaml OPTION
-`kubectl run pod-name --image=image --dry-run=client -o yaml > pod.yaml`
+## To create a manifest file using kubectl run with --dry-run=client -o yaml option
+```bash
+kubectl run pod-name --image=image --dry-run=client -o yaml > pod.yaml
+```
 
-# TO CREATE A RESOURCE FROM THE MANIFEST FILE
-`kubectl create -f pod.yaml`
+## To create a resource from the manifest file
+```bash
+kubectl create -f pod.yaml
+```
 
-# TO KNOW THE IMAGE USED TO CREATE A POD & TO KNOW HOW MANY CONTAINERS ARE PART OF A POD
-`kubectl describe pod pod-name`
+## To know the image used to create a pod & to know how many containers are part of a pod
+```bash
+kubectl describe pod pod-name
+```
 
-The command: kubectl describe pod `pod-name` provides detailed information about a specific pod in Kubernetes. 
-This information includes:
+The command `kubectl describe pod pod-name` provides detailed information about a specific pod in Kubernetes. This information includes:
 
-- Recent events: Any recent events that have occurred related to the pod.
-- Containers and their images: Details about the containers within the pod and the images they are using.
-- Mounted volumes: Information about any volumes that are mounted within the pod.
-- Pod conditions: The current conditions of the pod, such as whether it is running, pending, or failed.
-- IP addresses: The IP addresses assigned to the pod.
-- Annotations and labels: Any annotations and labels that have been applied to the pod.
+- **Recent events**: Any recent events that have occurred related to the pod.
+- **Containers and their images**: Details about the containers within the pod and the images they are using.
+- **Mounted volumes**: Information about any volumes that are mounted within the pod.
+- **Pod conditions**: The current conditions of the pod, such as whether it is running, pending, or failed.
+- **IP addresses**: The IP addresses assigned to the pod.
+- **Annotations and labels**: Any annotations and labels that have been applied to the pod.
 
-=> To know the image Under Containers you have just to look in Image to know which Image is used to create the POD<br>
-=> To know how many containers are part of a pod look in the output, look for the "Containers" section and count the number of containers listed. Each container will have its own subsection under "Containers".<br>
-=> To know the state of a container in a pod, look for the "State" section under each container. The state can be "Waiting", "Running", or "Terminated".<br>
-=> To know what causes a container in a pod to be in error or waiting, look for the "Reason" and "Message" fields under the "State" section. These fields will provide details about the cause.<br>
-=> If the state is `Waiting` and the reason is `ImagePullBackOff`, it indicates that Kubernetes is unable to pull the container image. Check the "Reason" and "Message" fields for more details. Common causes include incorrect image name, lack of permissions, or network issues.
+- To know the image used to create the pod, look under **Containers** for the `Image` field.
+- To know how many containers are part of the pod, count the number of containers listed under the **Containers** section.
+- To know the state of a container, check the **State** section under each container, which can be "Waiting", "Running", or "Terminated".
+- To understand why a container is in error or waiting, check the **Reason** and **Message** fields under the **State** section for details.
+- If the state is `Waiting` and the reason is `ImagePullBackOff`, it indicates that Kubernetes is unable to pull the image. Check the **Reason** and **Message** fields for more details, which might include an incorrect image name, permission issues, or network problems.
 
-# TO KNOW WHICH NODES A POD WAS PLACED ON 
-`kubectl get pods -o wide`
+## To know which nodes a pod was placed on
+```bash
+kubectl get pods -o wide
+```
 
-This command will display a list of pods along with additional information, including the nodes they are running on.
+This command displays a list of pods along with additional information, including the nodes they are running on.
 
-# What does the READY column in the output of the kubectl get pods command indicate?
+## What does the READY column in the output of kubectl get pods indicate?
 
-The `READY` column shows the ratio of containers that are ready to serve requests to the total number of containers in the pod. It is displayed in the format `X/Y`, where `X` is the number of containers that are ready, and `Y` is the total number of containers in the pod.
+The `READY` column shows the ratio of containers that are ready to serve requests compared to the total number of containers in the pod. The format is `X/Y`, where `X` is the number of containers that are ready, and `Y` is the total number of containers in the pod.
 
-For example, if a pod has 2 containers and both are ready, the `READY` column will show `2/2`. If only one container is ready, it will show `1/2`.
+For example:
+- If a pod has 2 containers and both are ready, it will show `2/2`.
+- If only one container is ready, it will show `1/2`.
 
-# TO DELETE A POD
-`kubectl delete pod pod-name`
+## To delete a pod
+```bash
+kubectl delete pod pod-name
+```
 
 This command will delete the specified pod from the Kubernetes cluster.
 
-# EDIT A POD
-`kubectl edit pod pod-name`
+## Edit a pod
+```bash
+kubectl edit pod pod-name
+```
 
-# UPDATE THE POD
-`kubectl apply -f pod-name.yaml`
+## Update the pod
+```bash
+kubectl apply -f pod-name.yaml
+```
