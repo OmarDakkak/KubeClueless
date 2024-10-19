@@ -103,4 +103,3 @@ kubectl run <pod-name> --image=<image-name> --port=<container-port> --expose
 ```bash
 kubectl run httpd --image=httpd:alpine --port=80 --expose
 ```
-s
