@@ -70,7 +70,3 @@ Feel free to contribute by:
 2. Improving explanations
 3. Fixing errors
 4. Suggesting additional topics
-
-## License
-
-This repository is available under the [MIT License](LICENSE).
